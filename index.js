@@ -21,11 +21,6 @@ function placeFood() {
     var item = document.createElement("div");
     itemTop = (Math.random() * 95) + 5;
     itemLeft = (Math.random() * 95) + 5;
-    while (checkBodyCollision([itemTop, itemLeft])) {
-        itemTop = (Math.random() * 95) + 5;
-        itemLeft = (Math.random() * 95) + 5;
-        console.log("Moving Food.");
-    }
     item.setAttribute("id", "food");
     itemTop = itemTop - (itemTop % 5);
     itemLeft = itemLeft - (itemLeft % 5);
@@ -40,27 +35,29 @@ $(document).ready(() => {
     $("#score").text(`Score: ${score}`);
     $("#time").text(`Time Played: ${time} Seconds`);
     $("#start").click(() => {
+        startGame();
+    });
+    $(document).keydown((event) => {
+        startGame();
+    })
+});
+
+function startGame(){
+    if (event.code == "Enter") {
         if (document.getElementById("food") != null) {
             $("#food").remove();
         }
         start = (start == true) ? false : true;
         console.log("Game Start!");
         placeFood();
-        document.getElementById("start").disabled = true;
-    });
-    $(document).keydown((event) => {
-        if (event.code == "Enter") {
-            if (document.getElementById("food") != null) {
-                $("#food").remove();
-            }
-            start = (start == true) ? false : true;
-            console.log("Game Start!");
+        while (checkBodyCollision([itemTop, itemLeft])) {
+            $("#food").remove();
             placeFood();
-            document.getElementById("start").disabled = true;
+            console.log("Moving Food");
         }
-    })
-
-});
+        document.getElementById("start").disabled = true;
+    }
+}
 
 $(document).keydown((event) => {
     if (start == true) {
@@ -99,6 +96,11 @@ setInterval(() => {
             node.setAttribute("id", "segment" + score);
             node.classList.add("segment");
             $("#background").append(node);
+        }
+        while (checkBodyCollision([itemTop, itemLeft])) {
+            $("#food").remove();
+            placeFood();
+            console.log("Moving Food");
         }
         var topCheck = (playerTop < 100) && (playerTop > 0);
         var leftCheck = (playerLeft < 100) && (playerLeft > 0);

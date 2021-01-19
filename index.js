@@ -24,6 +24,7 @@ function placeFood() {
     while (checkBodyCollision([itemTop, itemLeft])) {
         itemTop = (Math.random() * 95) + 5;
         itemLeft = (Math.random() * 95) + 5;
+        console.log("Moving Food.");
     }
     item.setAttribute("id", "food");
     itemTop = itemTop - (itemTop % 5);

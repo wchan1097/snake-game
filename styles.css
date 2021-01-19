@@ -90,7 +90,6 @@ p, #start, #restart {
 }
 
 #death-screen {
-  transition: 1s;
   display: none;
   position: fixed;
   height: 100vh;

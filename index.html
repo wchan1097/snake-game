@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <div id="window">
+        <h1>Snake Game</h1>
+        <div id="background">
+            <div id="player"></div>
+        </div>
+        <div id="playerBoard">
+            <p>
+                <u>Instructions</u><br> Move with WASD. 
+                Collect the <span style="color: #ff1100">red squares</span> and avoid the edges and your trail. 
+                Press 'Enter' to Start or Click Button.
+            </p>
+            <hr>
+            <p id="score">Score: <span></span></p>
+            <p id="time">Time Alive: <span></span></p>
+            <div><button id="start" type="button">Start</button></div>
+        </div>
+    </div>
+    <div id="death-screen">
+        <div id="death-card">
+            <h2><img src="./skull.png" alt="Skull Icon"> You Died!</h2>
+            <div id="death-info">
+                <p id="death-score">Score: <span></span></p>
+                <p id="death-time">Time Alive: <span></span></p>
+            </div>
+            <div>
+                <button type="button" id="restart">Restart</button>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="node_modules/jquery/dist/jquery.js" defer></script>
+    <script type="text/javascript" src="index.js" defer></script>
+</body>
+
+</html>

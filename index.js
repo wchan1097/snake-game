@@ -1,4 +1,4 @@
-import "jquery"
+import * from "./node_modules/jquery/dist/jquery";
 
 var score = 0;
 var time = 0;

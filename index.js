@@ -29,17 +29,16 @@ function placeFood() {
     $("#food").css({ left: `${itemLeft}%` });
 }
 
-jquery(document).ready(() => {
-    $("#player").css({ top: `${playerTop}%` });
-    $("#player").css({ left: `${playerLeft}%` });
-    $("#score").text(`Score: ${score}`);
-    $("#time").text(`Time Played: ${time} Seconds`);
-    $("#start").click(() => {
-        startGame();
-    });
-    $(document).keydown((event) => {
-        startGame();
-    })
+
+$("#player").css({ top: `${playerTop}%` });
+$("#player").css({ left: `${playerLeft}%` });
+$("#score").text(`Score: ${score}`);
+$("#time").text(`Time Played: ${time} Seconds`);
+$("#start").click(() => {
+    startGame();
+});
+$(document).keydown((event) => {
+    startGame();
 });
 
 function startGame(){

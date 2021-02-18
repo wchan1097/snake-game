@@ -29,7 +29,7 @@ function placeFood() {
     $("#food").css({ left: `${itemLeft}%` });
 }
 
-$(document).ready(() => {
+jquery(document).ready(() => {
     $("#player").css({ top: `${playerTop}%` });
     $("#player").css({ left: `${playerLeft}%` });
     $("#score").text(`Score: ${score}`);

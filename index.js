@@ -1,4 +1,4 @@
-var $ = jquery = require("jquery");
+var $ = jquery = require("./node_modules/jquery/dist/jquery");
 
 var score = 0;
 var time = 0;

@@ -1,3 +1,5 @@
+var $ = jquery = require("jquery");
+
 var score = 0;
 var time = 0;
 var start = false;
